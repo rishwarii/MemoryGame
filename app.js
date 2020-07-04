@@ -65,15 +65,7 @@ document.addEventListener('DOMContentLoaded' ,()=> {
             img:' images/pizza.png'
         } 
 
-        // {
-        //     name:'white',
-        //     img:' images/white.png'
-        // } ,
-
-        // {
-        //     name:'blank',
-        //     img:' images/blank.png'
-        // }
+      
     ]
 
     cardarrya.sort(() => 0.5 - Math.random())
