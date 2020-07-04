@@ -72,20 +72,21 @@ document.addEventListener('DOMContentLoaded' ,()=> {
 
 
     const grid = document.querySelector('.grid')
-    const resultDisplay = Document.querySelectorAll('#result')
+    const resultDisplay = document.querySelector('#result')
     var cardschosen = []
     var cardschosenId =[]
     var cardswon = []
     //creating board
     function createBoard(){
-        for (let i =0;i<cardarrya.length;i++)
+        for (let i =0; i<cardarrya.length; i++)
         {
             var card = document.createElement('img')
             card.setAttribute('src', 'images/blank.png')
             card.setAttribute('data-id',i)
-           // card.addEventListener('click',flipcard)
-            grid.appendChild(cardarrya[cardId.name])
-            cardschosenId.push(cardId)
+            card.addEventListener('click',flipcard)
+            grid.appendChild(card)
+            
+            //cardschosenId.push(cardId)
         }
     }
 
@@ -96,11 +97,13 @@ document.addEventListener('DOMContentLoaded' ,()=> {
         const optiononeid = cardschosenId[0]
         const optiontwoid = cardschosenId[1]
 
-        if(cardschosenId[0]==cardschosenId[1])
+        if(optiononeid==optiontwoid)
         {
             alert('You found a match')
             cards[optiononeid].setAttribute('src','images/white.png')
             cards[optiontwoid].setAttribute('src','images/white.png')
+            cards[optionOneId].removeEventListener('click', flipCard)
+	        cards[optionTwoId].removeEventListener('click', flipCard)
             cardswon.push(cardschosen)
 
 
@@ -141,12 +144,11 @@ document.addEventListener('DOMContentLoaded' ,()=> {
         }
 
     }
-
+    createBoard()
 }
 
+  
+
 )
-
-
-
 
 
